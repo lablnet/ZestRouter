@@ -172,6 +172,8 @@ To match the current request, just call the `customDispatch()` method without an
 $match = $router->customDispatch();
 ```
 
+If a match was found, the `customDispatch()` method will return an associative array
+
 # Processing Requests
 
 ZestRouter process requests for you but so you are free to use the method you prefer. To help you get started, here's a simplified example using closures.
