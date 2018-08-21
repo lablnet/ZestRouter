@@ -163,8 +163,9 @@ For quickly adding multiple routes, you can use the addRoutes method. This metho
 
 ```php
 $router->addRoutes(array(
-  array('users/{id:[0-9]+}', 'users@update', 'PATCH'),
-  array('users/{id:[0-9]+}', 'users@delete', 'DELETE')
+  array('users/{username:\w+}', 'users@view', 'get'),
+  array('users/{id:\d+}', 'users@update', 'PATCH'),
+  array('users/{id:\d+}', 'users@delete', 'DELETE')
 ));
 ```
 
@@ -189,7 +190,7 @@ ZestRouter process requests for you but so you are free to use the method you pr
 $router->get('', function () {
     echo 'Example route using closure';
 });
-$router->get('user/{id:[0-9]+}', function ($args) {
+$router->get('user/{id:\d+}', function ($args) {
     echo 'Example route using closure with params id: ' .$args['id'];
 });
 
