@@ -103,18 +103,18 @@ there are many to two ways to add the routes
     },'GET'); 
 
 ```
-The add() method accepts the following parameters.
+The `add()` method accepts the following parameters.
 
-$route (string)
+`$route` (string)
 This is the route pattern to match against. This can be a plain string, a custom regex.
 
-$params (array|string|Closure)
+`$params` (array|string|Closure)
 This is paramter for controllers and controller method or closure
 (array) => ['controller' => 'Home', 'action' => 'index'] 
 (string) => "Home@index" 
 (closure) => function () { echo "Welcome"; }
 
-$method (string)
+`$method` (string)
 This is a pipe-delimited string of the accepted HTTP requests methods.
 
 Example: GET|POST|PATCH|PUT|DELETE
@@ -128,14 +128,14 @@ Example: GET|POST|PATCH|PUT|DELETE
 
 ```
 there are 5 request methods supports
-get(),post(),put(),patch(),delete()
+`get(),post(),put(),patch(),delete()``
 
 These methods accepts the following parameters.
 
-$route (string)
+`$route` (string)
 This is the route pattern to match against. This can be a plain string, a custom regex.
 
-$params (array|string|Closure)
+`$params` (array|string|Closure)
 This is paramter for controllers and controller method or closure
 (array) => ['controller' => 'Home', 'action' => 'index'] 
 (string) => "Home@index" 
@@ -161,6 +161,15 @@ $router->addRoutes(array(
   array('users/{id:[0-9]+}', 'users@update', 'PATCH'),
   array('users/{id:[0-9]+}', 'users@delete', 'DELETE')
 ));
+```
+
+
+# Matching Requests
+
+To match the current request, just call the `customDispatch()` method without any parameters.
+
+``` php
+$match = $router->customDispatch();
 ```
 
 # Processing Requests
