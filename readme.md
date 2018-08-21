@@ -45,7 +45,7 @@ $router->dispatch($_SERVER['QUERY_STRING']);
 - Router with controllers by namespaces
 - Routers using closure
 
-#install
+# install
 
 Run the command in terminal/cmd
 ``` composer require lablnet/zestrouter ```
