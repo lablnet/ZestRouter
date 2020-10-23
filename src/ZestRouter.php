@@ -32,8 +32,8 @@ class ZestRouter
      */
     protected $params = [];
 	
-	
-	protected $namespace;
+    
+    protected $namespace;
     /**
      * Add a route to the routing table.
      *
